@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Oferta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>⚙️ Cadastrar Nova Oferta</h1>
+    <a href="/">⬅ Voltar</a>
+
+    <form method="POST">
+        <label>Nome do Produtor:</label>
+        <input type="text" name="nome_produtor" required><br>
+
+        <label>Energia Disponível (kWh):</label>
+        <input type="number" name="energia_kwh" step="0.1" required><br>
+
+        <label>Preço (R$/kWh):</label>
+        <input type="number" name="preco_kwh" step="0.01" required><br>
+
+        <button type="submit">Cadastrar Oferta</button>
+    </form>
+</body>
+</html>

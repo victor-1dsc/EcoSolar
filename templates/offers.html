@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ofertas de Energia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+    <h1>💡 Ofertas de Energia</h1>
+    <a href="/">⬅ Voltar</a>
+    <table id="offers-table">
+        <thead>
+            <tr>
+                <th>Produtor</th>
+                <th>Energia (kWh)</th>
+                <th>Preço (R$/kWh)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for offer in offers %}
+            <tr>
+                <td>{{ offer['nome_produtor'] }}</td>
+                <td>{{ offer['energia_kwh'] }}</td>
+                <td>{{ offer['preco_kwh'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        // Exemplo de renderização simples via JS (simulação de interação)
+        const rows = document.querySelectorAll('#offers-table tbody tr');
+        rows.forEach(row => {
+            row.addEventListener('click', () => {
+                alert(`Você selecionou o produtor: ${row.cells[0].innerText}`);
+            });
+        });
+    </script>
+</body>
+</html>
+
